@@ -1,7 +1,13 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import React, { Component } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import ApolloClient from "apollo-boost";
+import { ApolloProvider } from "react-apollo";
+import  Paintings from './Paintings';
+import PaintingMutation from './PaintingMutation';
+const client = new ApolloClient({
+  uri: "http://localhost:4000/graphql"
+});
 class App extends Component {
   render() {
     return (
@@ -20,6 +26,13 @@ class App extends Component {
             Learn React
           </a>
         </header>
+        <ApolloProvider client={client}>
+          <div>
+            <h2>My first Apollo app</h2>
+          </div>
+          <Paintings />
+          <PaintingMutation />
+        </ApolloProvider>
       </div>
     );
   }
