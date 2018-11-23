@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import gql from "graphql-tag";
 import { Mutation } from "react-apollo";
-import Paintings from './Paintings'
+import Paintings from '../queries/Paintings'
 const PAINTING_MUTATION = gql`
     mutation SavePainting($name: String!, $url: String!, $techniques: [String]!) {
         savePainting(payload: {name: $name, url: $url, techniques: $techniques}) {
@@ -9,7 +9,6 @@ const PAINTING_MUTATION = gql`
         },
     }
 `;
-
 
 class PaintingMutation extends Component {
   state = {

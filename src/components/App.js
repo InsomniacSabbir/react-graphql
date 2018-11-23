@@ -3,8 +3,8 @@ import logo from "./logo.svg";
 import "./App.css";
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
-import  Paintings from './Paintings';
-import PaintingMutation from './PaintingMutation';
+import  Paintings from '../../queries/Paintings';
+import PaintingMutation from '../../mutations/PaintingMutation';
 const client = new ApolloClient({
   uri: "http://localhost:4000/graphql"
 });
